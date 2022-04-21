@@ -14,6 +14,7 @@
     </div>
 
     <a href="{{ route('contact.index') }}" class="btn btn-secondary">Back</a>
-
+    <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-primary">Edit</a>
+    <a href="{{ route('contact.delete', $contact->id) }}" class="btn btn-warning">Delete</a>
 
 @endsection
