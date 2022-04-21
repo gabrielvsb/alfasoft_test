@@ -47,4 +47,16 @@ class ContactController extends Controller
         return redirect()->route('contact.index');
 
     }
+
+    public function delete($id){
+        $contact = Contact::where('id', '=', $id)->get()->toArray();
+
+        return view('contact.delete')->with(compact('contact'));
+    }
+
+    public function destroy(Request $request){
+        Contact::find($request->id)->delete();
+
+        return redirect()->route('contact.index');
+    }
 }
