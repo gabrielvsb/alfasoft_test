@@ -4,11 +4,13 @@
     <h3 class="mb-3">Edit Contact</h3>
 
     @if($errors->any())
-        <ul>
-            @foreach($errors->all() as $error)
-                <li> {{ $error }}</li>
-            @endforeach
-        </ul>
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li> {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
 
     <form method="POST" action="/contact/update">
