@@ -11,4 +11,10 @@ class ContactController extends Controller
         $contacts = Contact::all();
         return view('contact.index')->with(compact('contacts'));
     }
+
+    public function detail($id){
+        $contact = Contact::find($id);
+
+        return view('contact.detail')->with(compact('contact'));
+    }
 }
