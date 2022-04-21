@@ -35,11 +35,11 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact.index') }}">Home</a>
+                        <a class="nav-link {{ Request::routeIs('contact.index') ? 'active' : '' }}" href="{{ route('contact.index') }}">Home</a>
                     </li>
                     @if(Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact.create') }}">New Contact</a>
+                            <a class="nav-link {{ Request::routeIs('contact.create') ? 'active' : '' }}" href="{{ route('contact.create') }}">New Contact</a>
                         </li>
                     @endif
                 </ul>
