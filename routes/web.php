@@ -19,6 +19,11 @@ Route::get('/', function () {
 
 Route::get('/index', [ContactController::class, 'index'])->name('contact.index');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/contact/create', [ContactController::class, 'create'])->name('contact.create');
+    Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
