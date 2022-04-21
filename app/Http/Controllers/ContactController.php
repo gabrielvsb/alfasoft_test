@@ -30,4 +30,21 @@ class ContactController extends Controller
         return redirect()->route('contact.index');
 
     }
+
+    public function edit($id){
+        $contact = Contact::where('id', '=', $id)->get()->toArray();
+
+        return view('contact.edit')->with(compact('contact'));
+    }
+
+    public function update(StoreUpdateContact $request){
+
+        Contact::where('id', '=', $request->id)->update([
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'email' => $request->email
+        ]);
+        return redirect()->route('contact.index');
+
+    }
 }
