@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h3 class="mb-3">Contacts List</h3>
+    <h3 class="mb-3">Contact List</h3>
 
     <div>
         <table class="table">
